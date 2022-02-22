@@ -30,16 +30,20 @@ public class Livre {
 
     private Integer nombreDePages;
 
+    @ManyToOne
+    private Editeur editeur;
+
     public Livre() {
     }
 
-    public Livre(String titre, String auteur, boolean lu, String isbn, String resume, Integer nombreDePages) {
+    public Livre(String titre, String auteur, boolean lu, String isbn, String resume, Integer nombreDePages, Editeur editeur) {
         this.titre = titre;
         this.auteur = auteur;
         this.lu = lu;
         this.isbn = isbn;
         this.resume = resume;
         this.nombreDePages = nombreDePages;
+        this.editeur = editeur;
     }
 
     @Override
@@ -51,6 +55,8 @@ public class Livre {
                 ", lu=" + lu +
                 ", isbn='" + isbn + '\'' +
                 ", resume='" + resume + '\'' +
+                ", nombreDePages=" + nombreDePages +
+                ", editeur=" + editeur +
                 '}';
     }
 }

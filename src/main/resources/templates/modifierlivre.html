@@ -17,7 +17,7 @@
 <body>
 	<th:block th:replace="header.html" />
 	<div class="container">
-		<h1 class="bleu">Ajout d'un livre</h1>
+		<h1 class="bleu">Modification d'un livre</h1>
 		<br>
 		<p class = "erreur" th:if="${erreur}" th:text="${erreur}"></p>
 		<br>
@@ -60,6 +60,10 @@
 						<textarea id="resume" rows="5" th:field="*{resume}" placeholder="Résumé" class="form-control"></textarea>
 					</div>
 				</div>
+
+				<select th:field="*{editeur}">
+					<option th:each="${editeurs}" th:value="*{editeur.id}" th:text="*{editeur.libelle}"></option>
+				</select>
 
 				<div class="form-group">
 					<div class="col-xs-offset-2 col-xs-10">

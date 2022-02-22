@@ -25,19 +25,19 @@ public class ApplicationConfig {
 		return liste;
 	}
 
-	@Bean
-	CatalogueLivre getLivres() {
-		CatalogueLivre c = new CatalogueLivre();
-		List<Livre> listeLivre = new ArrayList<>() {{
-			add(new Livre("Harry Potter à l'école des sorciers", "J. K. Rowling", true, "9780439362139", "Harry Potter est un garçon ordinaire. ... Harry Potter, le bébé survivant, a vaincu Voldemort, le sorcier noir. Élevé chez son moldu d'oncle qui le martyrise, sans connaître ses origines, il se retrouve propulsé à 11 ans dans un monde magique, celui des sorciers dont il fait parti.", 657));
-			add(new Livre("Harry Potter et la Chambre des secrets", "J. K. Rowling", false, "207058464X", "Une rentrée fracassante en voiture volante, une étrange malédiction quis'abat sur les élèves, cette deuxième année à l'école des sorciers ne s'annonce pas de tout repos ! Entre les cours de potions magiques, les matchs de Quidditch et les combats de mauvais sorts, Harry et ses amis Ron et Hermione trouveront-ils le temps de percer le mystère de la Chambre des Secrets ?", 780));
-			add(new Livre("Astérix et Cléopâtre", "René Goscinny", true, "9780340042397", "Cléopâtre fait le pari de construire un palais en un temps record afin de montrer à César la grandeur du peuple égyptien.", 68));
-		}};
-
-		c.setLivres(listeLivre);
-
-		return c;
-	}
+//	@Bean
+//	CatalogueLivre getLivres() {
+//		CatalogueLivre c = new CatalogueLivre();
+//		List<Livre> listeLivre = new ArrayList<>() {{
+//			add(new Livre("Harry Potter à l'école des sorciers", "J. K. Rowling", true, "9780439362139", "Harry Potter est un garçon ordinaire. ... Harry Potter, le bébé survivant, a vaincu Voldemort, le sorcier noir. Élevé chez son moldu d'oncle qui le martyrise, sans connaître ses origines, il se retrouve propulsé à 11 ans dans un monde magique, celui des sorciers dont il fait parti.", 657));
+//			add(new Livre("Harry Potter et la Chambre des secrets", "J. K. Rowling", false, "207058464X", "Une rentrée fracassante en voiture volante, une étrange malédiction quis'abat sur les élèves, cette deuxième année à l'école des sorciers ne s'annonce pas de tout repos ! Entre les cours de potions magiques, les matchs de Quidditch et les combats de mauvais sorts, Harry et ses amis Ron et Hermione trouveront-ils le temps de percer le mystère de la Chambre des Secrets ?", 780));
+//			add(new Livre("Astérix et Cléopâtre", "René Goscinny", true, "9780340042397", "Cléopâtre fait le pari de construire un palais en un temps record afin de montrer à César la grandeur du peuple égyptien.", 68));
+//		}};
+//
+//		c.setLivres(listeLivre);
+//
+//		return c;
+//	}
 	
 	@Bean
 	Catalogue getCatalogue() {

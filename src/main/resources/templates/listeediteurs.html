@@ -33,32 +33,21 @@
 
     </p>
 
-    <h1 class="bleu">Liste des livres<span class="badge btn-primary gros pull-right"
-                                           th:text="${#arrays.length(listeL)}"></span></h1>
+    <h1 class="bleu">Liste des éditeurs<span class="badge btn-primary gros pull-right"
+                                           th:text="${#arrays.length(listeE)}"></span></h1>
 
     <table class="table table-hover table-striped">
         <tr>
-            <th>Titre</th>
-            <th>Auteur</th>
-            <th>ISBN</th>
-            <th>Nombre de pages</th>
-            <th>Résumé</th>
-            <th>Lu</th>
-            <th th:if="${@membre.id != 0}">Avis</th>
+            <th>Nom</th>
         </tr>
-        <tr th:each="l : ${listeL}">
+        <tr th:each="editeur : ${listeE}">
 
-            <td><a th:href="@{afficher(id=${l.id})}"><span th:text="${l.titre}"></span></a></td>
-            <td th:text="${l.auteur}"></td>
-            <td th:text="${l.isbn}"></td>
-            <td th:text="${l.nombreDePages}"></td>
-            <td th:text="${l.resume}"></td>
-            <td th:text="${l.isLu()}"></td>
+            <td th:text="${editeur.libelle}"></td>
             <td>
-                <a th:href="@{/supprimer/{id}(id=${l.id})}">Supprimer</a>
+                <a th:href="@{/editeur/supprimer/{id}(id=${editeur.id})}">Supprimer</a>
             </td>
             <td>
-                <a th:href="@{/modifier/{id}(id=${l.id})}">Modifier</a>
+                <a th:href="@{/editeur/modifier/{id}(id=${editeur.id})}">Modifier</a>
             </td>
         </tr>
     </table>

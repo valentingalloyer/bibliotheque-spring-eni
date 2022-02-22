@@ -11,9 +11,6 @@ import java.util.Optional;
 
 @Service
 public class LivreServiceEnMemoire implements LivreService{
-
-	@Autowired
-	CatalogueLivre catalogue;
 	
 	@Autowired
 	private ConnexionService connexionService;
@@ -46,6 +43,9 @@ public class LivreServiceEnMemoire implements LivreService{
 			}
 			if (livre.getNombreDePages() < 1) {
 				throw new BllException("Le nombre de pages doit être strictement positif");
+			}
+			if (livre.getEditeur() == null) {
+				throw new BllException("L'éditeur est obligatoire");
 			}
 			livre.setLu(false);
 		}

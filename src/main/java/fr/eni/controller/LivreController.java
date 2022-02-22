@@ -1,6 +1,7 @@
 package fr.eni.controller;
 
 import fr.eni.bll.BllException;
+import fr.eni.bll.EditeurService;
 import fr.eni.bll.LivreService;
 import fr.eni.bo.Membre;
 import fr.eni.entity.Livre;
@@ -17,6 +18,9 @@ public class LivreController {
 	
 	@Autowired
 	private LivreService livreService;
+
+	@Autowired
+	private EditeurService editeurService;
 	
 	@Autowired
 	private Membre membre;
@@ -51,11 +55,12 @@ public class LivreController {
 
 	@GetMapping("/ajouter")
 	String ajouter(Model model) {
-		if (!membre.isAdmin()) {
-			model.addAttribute("erreur", "Vous devez être admin pour ajouter un livre");
-			return "index";
-		}
+//		if (!membre.isAdmin()) {
+//			model.addAttribute("erreur", "Vous devez être admin pour ajouter un livre");
+//			return "index";
+//		}
 		model.addAttribute("livre", new Livre());
+		model.addAttribute("editeurs", editeurService.listerEditeurs());
 		
 		return "ajoutlivre";
 	}
