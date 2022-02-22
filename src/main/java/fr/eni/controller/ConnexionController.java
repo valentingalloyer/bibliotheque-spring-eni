@@ -34,7 +34,7 @@ public class ConnexionController {
 		if (membre != null) {
 			this.membre.copy(membre);
 			redirectAttributes.addFlashAttribute("message", "Connexion effectuée avec succès");
-			return "redirect:/";
+			return "index";
 		}
 		else {
 			model.addAttribute("erreur", "Identification incorrecte");
@@ -48,7 +48,7 @@ public class ConnexionController {
 		sess.invalidate();
 		redirectAttributes.addFlashAttribute("warning", "Déconnexion effectuée avec succès");
 
-		return "redirect:/";
+		return "index";
 	}
 	
 	

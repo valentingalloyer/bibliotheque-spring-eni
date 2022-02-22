@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller
+//@Controller
 public class FilmController {
 	
+	/*
 	@Autowired
 	private FilmService filmService;
 	
@@ -100,6 +101,6 @@ public class FilmController {
 		filmService.ajouterAvis(id, avis);		
 		
 		return "redirect:/lister";
-	}
+	}*/
 	
 }
