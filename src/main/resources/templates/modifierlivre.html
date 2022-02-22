@@ -17,12 +17,12 @@
 <body>
 	<th:block th:replace="header.html" />
 	<div class="container">
-		<h1 class="bleu">Modification d'un livre</h1>
+		<h1 class="bleu">Ajout d'un livre</h1>
 		<br>
 		<p class = "erreur" th:if="${erreur}" th:text="${erreur}"></p>
 		<br>
 		<div>
-			<form th:action="ajouter" method="POST"
+			<form th:action="@{/modifier/{id}(id=${livre.id})}" method="POST"
 				class="form-horizontal" th:object="${livre}">
 
 				<div class="form-group">

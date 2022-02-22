@@ -96,11 +96,11 @@ public class LivreController {
 		}
 		model.addAttribute("livre", livreService.trouverLivre(id));
 
-		return "ajoutlivre";
+		return "modifierlivre";
 	}
 
-	@PostMapping("/modifier")
-	String modifier(Model model, @ModelAttribute long id, @ModelAttribute Livre livre) throws BllException {
+	@PostMapping("/modifier/{id}")
+	String modifier(Model model, @PathVariable long id, @ModelAttribute Livre livre) throws BllException {
 		Livre l = livreService.trouverLivre(id);
 		if (l == null) {
 			return "redirect:/lister";
