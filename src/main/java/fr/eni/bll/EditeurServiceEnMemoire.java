@@ -32,21 +32,30 @@ public class EditeurServiceEnMemoire implements EditeurService {
 
     @Override
     public void ajouterEditeur(Editeur editeur) throws BllException {
-        if (editeur == null) {
-            throw new BllException("L'éditeur est null");
-        } else {
-            dao.save(editeur);
+        try {
+            if (editeur == null) {
+                throw new BllException("L'éditeur est null");
+            } else {
+                dao.save(editeur);
+            }
+        } catch (Exception e) {
+            throw new BllException("Impossible d'avoir deux éditeurs du même nom");
         }
     }
 
     @Override
     public void modifierEditeur(Editeur editeur) throws BllException {
-        if (editeur == null) {
-            throw new BllException("L'éditeur est null");
-        } if (editeur.getId() == null) {
-            throw new BllException("L'éditeur à modifier n'existe pas");
-        } else {
-            dao.save(editeur);
+        try {
+            if (editeur == null) {
+                throw new BllException("L'éditeur est null");
+            }
+            if (editeur.getId() == null) {
+                throw new BllException("L'éditeur à modifier n'existe pas");
+            } else {
+                dao.save(editeur);
+            }
+        } catch (Exception e) {
+            throw new BllException("Impossible d'avoir deux éditeurs du même nom");
         }
     }
 
